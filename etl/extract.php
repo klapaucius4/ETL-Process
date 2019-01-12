@@ -1,5 +1,5 @@
 <?php
-
+include_once('../header.php');
 /*
  * Link: https://www.pracuj.pl/praca/programista;kw/ostatnich%2024h;
  */
@@ -9,6 +9,14 @@
 
 include_once('../config.php');
 include_once('../lib/simple_html_dom.php');
+include_once('etlFunctions.php');
+
+
+$lastEtlStatus = getLastEtlStatus();
+
+if($lastEtlStatus != 'L'){
+    echo "Nie mozna wykonac etapu EXTRACT, ponieważ ostatni proces ETL (lub sam etap Load) nie zostal zakonczony.";
+}else{
 
 
 $fp = fopen('../data_from_extract.csv', 'w');
@@ -95,7 +103,6 @@ for($pageNumer = 1; $pageNumer <= HOW_MANY_PAGES_TO_EXTRACT; $pageNumer++){
         //     $productData['content'] = preg_replace('/\s\s+/', '', $content);
         // }
 
-
         fputcsv($fp, $productData, '|');
     }
 
@@ -103,6 +110,14 @@ for($pageNumer = 1; $pageNumer <= HOW_MANY_PAGES_TO_EXTRACT; $pageNumer++){
 
 fclose($fp);
 echo "Dane zostaly pobrane z serwisu Gumtree i zapisane do pliku <strong>data_from_extract.csv</strong>.<br /><br />";
+
+setLastEtlStatus('E');
+
+
 $simpleHtmlDomUrl = 'http://'.$_SERVER['SERVER_NAME'].'/simple_html_dom.csv';
+
+}
+
+include_once('../footer.php');
 
 ?>
