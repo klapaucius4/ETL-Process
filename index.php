@@ -99,28 +99,30 @@
 
           <div class="subheading mb-3">Wykonanie proceus ETL w całości</div>
 
-          <a href="#" class="btn btn-warning">Wykonaj proces ETL</a>
+          <a href="/etl/etlFull.php" class="btn btn-warning">Wykonaj proces ETL</a>
 
           <hr />
 
           <div class="subheading mb-3">Wykonaj proces ETL oddzielnie</div>
-          <ul class="fa-ul m-0">
-            <li class="my-1">
-              <a href="/etl/extract.php" target="_blank" class="btn btn-info">E (extract)</a>
+          <ul class="fa-ul m-0 list-inline">
+            <li class="my-1 list-inline-item">
+              <a href="/etl/extract.php" class="btn btn-info">E (extract)</a>
             </li>
-            <li class="my-1">
-              <a href="/etl/transform.php" target="_blank" class="btn btn-secondary">T (transform)</a>
+            <li class="my-1 list-inline-item">
+              <a href="/etl/transform.php" class="btn btn-secondary">T (transform)</a>
             </li>
-            <li class="my-1">
-              <a href="/etl/load.php" target="_blank" class="btn btn-success">L (load)</a>
+            <li class="my-1 list-inline-item">
+              <a href="/etl/load.php" class="btn btn-success">L (load)</a>
             </li>
           </ul>
 
 
           <hr />
 
-          <div class="subheading mb-3">Wyczyść bazę</div>
-          <a href="#" class="btn btn-danger">Czyszczenie bazy</a>
+          <div class="subheading mb-3">Zarządzanie danymi w bazie</div>
+          <a href="/etl/showDataFromDatabase.php" class="btn btn-primary">Zobacz dane w bazie</a>
+          <a href="/etl/downloadCSV.php" class="btn btn-dark">Pobierz dane w formacie CSV</a>
+          <a href="/etl/deleteDatabase.php" class="btn btn-danger" onclick="return confirm('Czy jesteś pewny, że chcesz usunąć bazę danych?')">Wyczyść bazę danych</a>
         </div>
       </section>
 

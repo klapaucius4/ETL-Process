@@ -7,7 +7,7 @@ include_once('etlFunctions.php');
 <div class="my-auto">
 <div class="row">
     <div class="col-md-12">
-        <h2>Extract</h2>
+        <h2>Extract -> Transform -> Load</h2>
     </div>
 </div>
 <div class="row">
@@ -17,11 +17,15 @@ include_once('etlFunctions.php');
 $lastEtlStatus = getLastEtlStatus();
 
 if($lastEtlStatus['lastStatus'] != 'L'){
-    echo "Nie mozna wykonac etapu EXTRACT, ponieważ ostatni proces ETL (lub sam etap Load) nie został zakończony.<br /><br />";
+    echo "Nie mozna wykonac całego procesu ETK, ponieważ ostatni proces ETL (lub sam etap Load) nie został zakończony.<br /><br />";
     echo "Ostatni etap: ".$lastEtlStatus['lastStatus']."<br />";
     echo "Data ostatniego etapu: ".$lastEtlStatus['lastStatusDate']."<br />";
 }else{
-    extractStep();
+    if(extractStep()){
+        if(transformStep()){
+            loadStep();
+        }
+    };
 }
 ?>
 
