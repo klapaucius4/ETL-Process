@@ -15,8 +15,14 @@
             <li>Dawid Łysiak</li>
           </ul>
           <p class="mt-5">
-            <a href="https://github.com/klapaucius4/ETL-Process" target="_blank" title="Repozytorium w serwisie Github">
-              <i class="fab fa-github-square fa-4x"></i>
+            <a href="https://github.com/klapaucius4/ETL-Process" target="_blank" title="Repozytorium w serwisie Github" class="mr-4">
+              <i class="fab fa-github fa-4x"></i>
+            </a>
+            <a href="/files/strona-tytulowa.pdf" target="_blank" title="Strona tytułowa projektu" class="mr-4" download>
+              <i class="fas fa-file-invoice fa-4x"></i>
+            </a>
+            <a href="/files/struktura_bazy_danych.sql" target="_blank" title="Struktura bazy danych" class="mr-4" download>
+              <i class="fas fa-database fa-4x"></i>
             </a>
           </p>
         </div>
@@ -31,9 +37,7 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-5">Do pobrania</h3>
-              <!-- <div class="subheading mb-3">Intelitec Solutions</div> -->
-              <a href="Dokumentacja-techniczna.pdf" class="btn btn-primary" download>Dokumentacja techniczna</a>
-              <!-- <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p> -->
+              <a href="/files/dokumentacja-techniczna.pdf" class="btn btn-primary" download>Dokumentacja techniczna</a>
             </div>
           </div>
 
@@ -51,7 +55,7 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
               <h3 class="mb-5">Do pobrania</h3>
-              <a href="Instrukcja-obslugi.pdf" class="btn btn-success" download>Instrukcja obsługi</a>
+              <a href="/files/instrukcja-obslugi.pdf" class="btn btn-success" download>Instrukcja obsługi</a>
             </div>
           </div>
 

@@ -172,10 +172,11 @@ function transformStep(){
         fclose($fp);
     
         unlink('../data_from_extract.csv');
+
+        $dataFromTransformUrl = 'http://'.$_SERVER['SERVER_NAME'].'/data_from_transform.csv';
     
         echo "Dane zostaly przeksztalcone i zapisane do pliku <a href='". $dataFromTransformUrl."' download>data_from_transform.csv</a>.<br />Zostal usuniety tez tymczasowy plik <strong>data_from_extract.csv</strong>, ktory przechowywal dane z procesu 'Extract'.<br />";
         
-        $dataFromTransformUrl = 'http://'.$_SERVER['SERVER_NAME'].'/data_from_transform.csv';
 
         echo "<br /><br />";
 
